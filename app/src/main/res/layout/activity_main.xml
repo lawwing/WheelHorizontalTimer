@@ -6,20 +6,38 @@
     android:layout_height="match_parent"
     tools:context="cn.lawwing.wheelhorizontaltimer.MainActivity">
 
-    <cn.lawwing.wheelhorizontaltimer.widget.WheelHorTimerView
-        android:id="@+id/ruler_weight"
+    <cn.lawwing.wheelhorizontaltimer.widget.CalendarView
+        android:id="@+id/cv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:gravity="bottom" />
+        android:layout_alignParentTop="true"></cn.lawwing.wheelhorizontaltimer.widget.CalendarView>
 
-    <View
-        android:layout_width="1px"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="#dd00dd" />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv"
+        android:text="查询日期" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.lawwing.wheelhorizontaltimer.widget.WheelHorTimerView
+            android:id="@+id/ruler_weight"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="150px"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="#dd00dd" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/showText"
