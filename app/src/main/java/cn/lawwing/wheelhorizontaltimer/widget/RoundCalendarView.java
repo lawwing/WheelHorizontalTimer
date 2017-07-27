@@ -140,8 +140,16 @@ public class RoundCalendarView extends LinearLayout
          */
         for (int i = 0; i < dateNum; i++)
         {
-            CalendarBean bean = new CalendarBean(i + 1, false, true);
-            dates.add(bean);
+            if (i == DATE)
+            {
+                CalendarBean bean = new CalendarBean(i + 1, true, true);
+                dates.add(bean);
+            }
+            else
+            {
+                CalendarBean bean = new CalendarBean(i + 1, false, true);
+                dates.add(bean);
+            }
         }
         /**
          * 下个月的数据
