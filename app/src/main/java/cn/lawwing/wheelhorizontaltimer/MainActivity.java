@@ -1,5 +1,7 @@
 package cn.lawwing.wheelhorizontaltimer;
 
+import java.util.Calendar;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -8,9 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
-
-import cn.lawwing.wheelhorizontaltimer.model.CalendarBean;
 import cn.lawwing.wheelhorizontaltimer.utils.ChineseDate;
 import cn.lawwing.wheelhorizontaltimer.utils.DrawUtil;
 import cn.lawwing.wheelhorizontaltimer.utils.ToolUtils;
