@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bossLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="20px"
+    android:paddingTop="20px">
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:background="@drawable/unselect_date"
+        android:gravity="center"
+        android:textColor="#6d89ac"
+        android:textSize="30px"
+        android:textStyle="bold" />
+</LinearLayout>

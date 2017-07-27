@@ -36,7 +36,7 @@ public class CalendarView extends LinearLayout
     
     private int h;
     
-    private String[] weeks = { "日", "一", "二", "三", "四", "五", "六" };
+    private String[] weeks = { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
     
     private ArrayList<Integer> dates = new ArrayList<Integer>();
     
@@ -52,7 +52,8 @@ public class CalendarView extends LinearLayout
         SELECTMONTH = TimeUtils.getNowMonth();
         SELECTDATE = TimeUtils.getNowDate();
         w = ToolUtils.getScreenW() / 7;
-        h = ToolUtils.getScreenW() / 9;
+        // h = ToolUtils.getScreenW() / 9;
+        h = 80;
         init(context, w, h);
     }
     
@@ -180,11 +181,13 @@ public class CalendarView extends LinearLayout
             if (SELECTDATE == k && SELECTMONTH == MONTH && SELECTYEAR == YEAR)
             {
                 datesTextViews[k].setBackgroundResource(R.drawable.select_date);
+                datesTextViews[k].setTextColor(Color.parseColor("#ffffff"));
             }
             else
             {
                 datesTextViews[k]
                         .setBackgroundResource(R.drawable.unselect_date);
+                datesTextViews[k].setTextColor(Color.parseColor("#6d89ac"));
             }
             final int kk = k;
             datesTextViews[k].setOnClickListener(new OnClickListener()
@@ -273,11 +276,13 @@ public class CalendarView extends LinearLayout
             if (position == i)
             {
                 datesTextViews[i].setBackgroundResource(R.drawable.select_date);
+                datesTextViews[i].setTextColor(Color.parseColor("#ffffff"));
             }
             else
             {
                 datesTextViews[i]
                         .setBackgroundResource(R.drawable.unselect_date);
+                datesTextViews[i].setTextColor(Color.parseColor("#6d89ac"));
             }
         }
         SELECTYEAR = YEAR;

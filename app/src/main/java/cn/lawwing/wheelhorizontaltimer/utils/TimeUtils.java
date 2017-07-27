@@ -73,6 +73,31 @@ public class TimeUtils
         // TODO Auto-generated method stub
         // 获取当前时间
         Calendar cal = Calendar.getInstance();
+        
+        // 下面可以设置月份，注：月份设置要减1，所以设置1月就是1-1，设置2月就是2-1，如此类推
+        cal.set(year, month - 1, 1);
+        Log.e("--",
+                year + "年" + month + "月"
+                        + cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+        return cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+    }
+    
+    public static int getLastMonthDatas(int year, int month)
+    {
+        // TODO Auto-generated method stub
+        // 获取当前时间
+        Calendar cal = Calendar.getInstance();
+        
+        if (month > 1)
+        {
+            month--;
+        }
+        else
+        {
+            month = 12;
+            year--;
+        }
+        
         // 下面可以设置月份，注：月份设置要减1，所以设置1月就是1-1，设置2月就是2-1，如此类推
         cal.set(year, month - 1, 1);
         Log.e("--",

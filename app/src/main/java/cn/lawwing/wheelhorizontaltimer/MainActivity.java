@@ -10,10 +10,11 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+import cn.lawwing.wheelhorizontaltimer.model.CalendarBean;
 import cn.lawwing.wheelhorizontaltimer.utils.ChineseDate;
 import cn.lawwing.wheelhorizontaltimer.utils.DrawUtil;
 import cn.lawwing.wheelhorizontaltimer.utils.ToolUtils;
-import cn.lawwing.wheelhorizontaltimer.widget.CalendarView;
+import cn.lawwing.wheelhorizontaltimer.widget.RoundCalendarView;
 import cn.lawwing.wheelhorizontaltimer.widget.WheelHorTimerView;
 
 public class MainActivity extends AppCompatActivity
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity
     
     private TextView showText;
     
-    private CalendarView calendarView;
+    private RoundCalendarView calendarView;
     
     private Button btn;
     
@@ -35,14 +36,14 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
         DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);
         ToolUtils.setScreenW(metric.widthPixels);
         ToolUtils.setScreenH(metric.heightPixels);
+        setContentView(R.layout.activity_main);
+        
         wheelHorTimerView = (WheelHorTimerView) findViewById(R.id.ruler_weight);
-        calendarView = (CalendarView) findViewById(R.id.cv);
+        calendarView = (RoundCalendarView) findViewById(R.id.cv);
         btn = (Button) findViewById(R.id.btn);
         
         showText = (TextView) findViewById(R.id.showText);
@@ -79,6 +80,14 @@ public class MainActivity extends AppCompatActivity
             {
                 // TODO Auto-generated method stub
                 Calendar cal = Calendar.getInstance();
+                if (calendarView.getDate() == null)
+                {
+                    Toast.makeText(getApplicationContext(),
+                            "请选择日期",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                
                 cal.set(calendarView.getDate().getYear(),
                         calendarView.getDate().getMonth() - 1,
                         calendarView.getDate().getDate());
